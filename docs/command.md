@@ -430,3 +430,63 @@ pstree (PSmisc) 23.4
 ```
 
 ---
+
+
+# 도커 디렉토리 구조
+
+```bash
+agentuser@0c47be8427f3:/app$ tree
+.
+|-- Dockerfile
+|-- agent-app-leak
+|-- api_keys
+|   `-- secret.key
+|-- docs
+|   |-- blueprint.md
+|   |-- command.md
+|   `-- study.md
+|-- logs
+|   |-- cpu
+|   |-- deadlock
+|   `-- oom
+|-- monitor.sh
+|-- reports
+|   |-- cpu-latency.md
+|   |-- deadlock.md
+|   `-- oom-crash.md
+|-- screenshots
+|   |-- cpu
+|   |-- deadlock
+|   `-- oom
+|-- upload_files
+`-- \353\257\270\354\205\230.pdf
+```
+
+---
+
+# monitor.sh , agent-app-leak 실행 권한 부여
+
+```bash
+agentuser@0c47be8427f3:/app$ chmod +x monitor.sh
+agentuser@0c47be8427f3:/app$ chmod +x agent-app-leak
+```
+
+---
+
+# 실행 권한 부여 후 파일 상태 확인
+
+```bash
+agentuser@0c47be8427f3:/app$ ls -l
+total 8892
+-rw-r--r-- 1 agentuser agentuser     435 May 21 06:43  Dockerfile
+-rwxrwxr-x 1 agentuser agentuser 7931880 May 21 08:11  agent-app-leak
+drwxr-xr-x 1 agentuser agentuser      96 May 21 05:23  api_keys
+drwxr-xr-x 1 agentuser agentuser     160 May 21 05:24  docs
+drwxr-xr-x 1 agentuser agentuser     160 May 21 05:14  logs
+-rwxr-xr-x 1 agentuser agentuser     894 May 21 08:27  monitor.sh
+drwxr-xr-x 1 agentuser agentuser     160 May 21 05:15  reports
+drwxr-xr-x 1 agentuser agentuser     160 May 21 05:14  screenshots
+drwxr-xr-x 1 agentuser agentuser      64 May 21 05:23  upload_files
+-rw-r--r-- 1 agentuser agentuser  642550 May 18 07:50 ''$'\353\257\270\354\205\230''.pdf'
+agentuser@0c47be8427f3:/app$
+```

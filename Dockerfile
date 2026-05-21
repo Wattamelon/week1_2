@@ -29,4 +29,4 @@ USER agentuser
 
 EXPOSE 15034
 
-CMD ["/bin/bash"]
+CMD ["/bin/bash"]   
